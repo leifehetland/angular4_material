@@ -15,3 +15,14 @@
   <mat-radio-button value="1">Hopes</mat-radio-button>
   <mat-radio-button value="2" [checked]="isChecked">Expectations</mat-radio-button>
 </mat-radio-group>
+
+<br>
+<br>
+
+<mat-form-field>
+  <mat-select [(ngModel)]="color">
+    <mat-option
+      *ngFor="let color of colors"
+      [value]="color.id">{{ color.name }}</mat-option>
+  </mat-select>
+</mat-form-field>

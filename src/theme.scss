@@ -1,29 +1,14 @@
-// Imports
-// @import "another.scss";
 
-// Variables and Mixins
-@mixin soft-border($border-radius) {
-  border: 1px solid #ccc;
-  border-radius: $border-radius;
-  padding: 10px;
-}
+@import "~@angular/material/_theming";
 
-$color: #607d8b;
+@include mat-core();
 
-h1 {
-  color: $color;
-  text-align: center;
-}
+// Sass function
+$app-primary: mat-palette($mat-blue-grey, 500);
+$app-secondary: mat-palette($mat-pink, 200);
+$app-warn: mat-palette($mat-red);
 
-h2 {
-  color: $color;
-  text-align: center;
-}
+$app-theme: mat-dark-theme($app-primary, $app-secondary, $app-warn);
+// $app-theme: mat-light-theme();
 
-.box {
-  @include soft-border(5px);
-}
-
-.modern-box {
-  @include soft-border(10px);
-}
+@include angular-material-theme($app-theme);

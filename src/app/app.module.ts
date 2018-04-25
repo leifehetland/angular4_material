@@ -10,7 +10,8 @@ import {
   MatInputModule,
   MatDatepickerModule,
   MatFormFieldModule,
-  MatButtonModule
+  MatButtonModule,
+  MatChipsModule
 } from '@angular/material';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMomentDateModule } from '@angular/material-moment-adapter';
@@ -35,7 +36,8 @@ import { AppComponent } from './app.component';
     MatMomentDateModule,
     MatFormFieldModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    MatChipsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

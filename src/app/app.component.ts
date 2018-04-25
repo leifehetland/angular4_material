@@ -9,6 +9,11 @@ import * as moment from 'moment';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  categories = [
+    { name: 'Easy'},
+    { name: 'Medium'},
+    { name: 'Hard'}
+  ];
   colors = [
     { id: 1, name: 'Red' },
     { id: 2, name: 'Green' },
@@ -29,6 +34,14 @@ export class AppComponent {
         throw Error(error);
       }
     );
+  }
+
+  selectCategory(category) {
+    this.categories
+      .filter(cat => cat != category)
+      .forEach(cat => cat['selected'] = false);
+
+      category.selected = !category.selected;
   }
 
   onChange($event) {

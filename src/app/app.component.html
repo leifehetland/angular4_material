@@ -6,3 +6,12 @@
   >Show Details</mat-checkbox>
 
 <div *ngIf="showDetails.checked">Some interesting info</div>
+
+<br>
+<br>
+
+<!-- Can check with checked or by passing desired value into group tag -->
+<mat-radio-group>
+  <mat-radio-button value="1">Hopes</mat-radio-button>
+  <mat-radio-button value="2" [checked]="isChecked">Expectations</mat-radio-button>
+</mat-radio-group>

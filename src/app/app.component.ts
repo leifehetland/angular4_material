@@ -61,7 +61,9 @@ export class AppComponent {
   }
 
   openDialog() {
-    this.dialog.open(EditInfoComponent)
+    this.dialog.open(EditInfoComponent, {
+      data: { infoId: 1 }
+    })
       .afterClosed()
       .subscribe(result => {
         console.log(result);

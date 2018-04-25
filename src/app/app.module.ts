@@ -52,7 +52,9 @@ import { EditInfoComponent } from './edit-info/edit-info.component';
     MatTabsModule,
     MatDialogModule
   ],
-  providers: [],
+  providers: [
+    // { provide: DIALOG_DATA, useValue: {} }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

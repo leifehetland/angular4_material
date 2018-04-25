@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject, InjectionToken } from '@angular/core';
+import { MAT_DIALOG_DATA } from '@angular/material';
+
+// export const DIALOG_DATA = new InjectionToken('DIALOG_DATA');
 
 @Component({
   selector: 'edit-info',
@@ -7,7 +10,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditInfoComponent implements OnInit {
 
-  constructor() { }
+  constructor(@Inject(MAT_DIALOG_DATA) data: any) {
+    console.log("Data:", data);
+  }
 
   ngOnInit() {
   }

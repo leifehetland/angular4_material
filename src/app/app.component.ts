@@ -21,9 +21,19 @@ export class AppComponent {
   ]
   color = 2;
   isChecked = true;
-
   @ViewChild(MatDatepicker) picker: MatDatepicker<Moment>;
   isValidMoment: boolean = false;
+  progress = 0;
+  timer;
+
+  constructor() {
+    this.timer = setInterval(() => {
+      this.progress++;
+      if (this.progress == 100) {
+          clearInterval(this.timer);
+      }
+    }, 100);
+  }
 
   ngAfterViewInit(){
     this.picker.selectedChanged.subscribe(

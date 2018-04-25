@@ -3,6 +3,8 @@
 
 @include mat-core();
 
+
+// Defining a Custom Theme
 // Sass function
 $app-primary: mat-palette($mat-blue-grey, 500);
 $app-secondary: mat-palette($mat-pink, 200);
@@ -12,3 +14,11 @@ $app-theme: mat-dark-theme($app-primary, $app-secondary, $app-warn);
 // $app-theme: mat-light-theme();
 
 @include angular-material-theme($app-theme);
+
+// Defining a Custom Typography
+$app-typography: mat-typography-config(
+  $font-family: '"PT Mono", "Helvetica Neue", sans-serif',
+  $headline: mat-typography-level(35px, 32px, 700px)
+);
+
+@include angular-material-typography($app-typography);

@@ -1,142 +1,147 @@
-<h1>Hello</h1>
-<h2>World</h2>
-
-<!-- Dialog -->
-<button
-  (click)="openDialog()"
-  mat-raised-button>Open</button>
-
 <!-- Tabs -->
 <mat-tab-group>
   <mat-tab label="Hip">
-    The Hip Section
+
+    <h1>The Hip Section</h1>
+    <p>
+      Ph'nglui mglw'nafh Cthulhu R'lyeh wgah'nagl fhtagn. Ooboshunyth athg nafluaaah Yoggoth, h'throd phlegeth vulgtm Cthulhu Azathoth gotha nilgh'ri y'hah mnahn' shtunggli, shaggor Yoggoth nilgh'ri lloig uaaah nw Tsathoggua geb. Uln mg geb vulgtlagln ftaghu zhro ngron, wgah'n Cthulhu vulgtm li'hee fhtagn nog, Yoggoth athg vulgtlagln hlirgh phlegeth. Haiyar ep shugg hai Shub-Niggurath li'hee ch' nog ch', wgah'n s'uhn clw'nafh Tsathoggua ch' s'uhn gnaiih tharanak, ep gof'nn y-Dagon ch' h'Dagon y'hah phlegeth. Stell'bsna cnw hafh'drn mnahn'oth mg nog uh'e ilyaa ph'hupadgh haioth, s'uhnagl athg wgah'n f''bthnk ooboshu uh'e h'ee fhtagn csll'ha, eenyth ya ee li'hee Azathoth uaaah ooboshu geb.
+    </p>
+
   </mat-tab>
   <mat-tab label="Hop">
-    The Hop Section
+    <h1>The Hop Section</h1>
+    <br>
+    <br>
+
+    <!-- Dialog -->
+    <button
+      (click)="openDialog()"
+      mat-raised-button>Open</button>
+
+    <br>
+    <br>
+
+    <!--  ToolTips -->
+    <span matTooltip="How are you today ^_^" matTooltipPosition="after">Hello World</span>
+
+    <br>
+    <br>
+
+    <!--  Progress Spinner -->
+    <mat-progress-spinner mode="determinate" [value]="progress"></mat-progress-spinner>
+    <mat-progress-spinner mode="indeterminate"></mat-progress-spinner>
+
+    <br>
+    <br>
+
+    <!--  Icons -->
+    <mat-icon>home</mat-icon>
+    <mat-icon>favorite</mat-icon>
+    <mat-icon>help</mat-icon>
+
+    <br>
+    <br>
+
+    <!--  Chips -->
+    <mat-chip-list>
+      <mat-chip
+        color="primary"
+        *ngFor="let category of categories"
+        (click)="selectCategory(category)"
+        [selected]="category.selected"
+        >{{ category.name }}</mat-chip>
+    </mat-chip-list>
+
+    <br>
+    <br>
+    <!--  Buttons -->
+    <button mat-raised-button>Button</button>
+    <button color="primary" label="primary" mat-raised-button>Primary</button>
+    <button color="accent" label="accent" mat-raised-button>Accent</button>
+    <button color="warn" label="warn" mat-raised-button>Warn</button>
+    <button color="primary"  mat-fab> <mat-icon>check</mat-icon></button>
+
+    <br>
+    <br>
+
+    <!--  CheckBoxes -->
+    <mat-checkbox
+      #showDetails
+      [value]=""
+      [checked]="isChecked"
+      (change)="onChange($event)"
+      >Show Details</mat-checkbox>
+
+    <div *ngIf="showDetails.checked">Some interesting info</div>
+
+    <br>
+    <br>
+
+    <!--  Radio Buttons -->
+    <!-- Can check with checked or by passing desired value into group tag -->
+    <mat-radio-group>
+      <mat-radio-button value="1">Hopes</mat-radio-button>
+      <mat-radio-button value="2" [checked]="isChecked">Expectations</mat-radio-button>
+    </mat-radio-group>
+
+    <br>
+    <br>
+
+    <!--  Select Fields -->
+    <mat-form-field>
+      <mat-select [(ngModel)]="color">
+        <mat-option
+          *ngFor="let color of colors"
+          [value]="color.id">{{ color.name }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <br>
+    <br>
+
+    <!--  Input Fields -->
+    <div>
+      <mat-form-field class="example-full-width">
+        <input
+          ngModel
+          #username="ngModel"
+          name="username"
+          matInput
+          placeholder="Username"
+          required
+          type="text">
+        <mat-hint>Must be unique.</mat-hint>
+        <span matSuffix>@domain.com</span>
+        <span matPrefix>admin.</span>
+        <mat-error *ngIf="username.invalid && username.errors.required">
+          Username is required.
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Name">
+      </mat-form-field>
+    </div>
+
+    <mat-form-field class="example-full-width">
+      <textarea matInput matTextareaAutosize placeholder="Leave a comment"></textarea>
+    </mat-form-field>
+
+    <br>
+    <br>
+
+    <!--  Date Picker -->
+    <mat-form-field>
+      <input
+        (focus)="birthday.open()"
+        matInput
+        [matDatepicker]="birthday"
+        placeholder="Choose a date">
+      <mat-datepicker-toggle matSuffix [for]="birthday"></mat-datepicker-toggle>
+      <mat-datepicker #birthday touchUi="true"></mat-datepicker>
+    </mat-form-field>
+
+    <p>Is valid moment object: {{isValidMoment}}</p>
+
   </mat-tab>
 </mat-tab-group>
-
-<br>
-<br>
-
-<!--  ToolTips -->
-<span matTooltip="How are you today ^_^" matTooltipPosition="after">Hello World</span>
-
-<br>
-<br>
-
-<!--  Progress Spinner -->
-<mat-progress-spinner mode="determinate" [value]="progress"></mat-progress-spinner>
-<mat-progress-spinner mode="indeterminate"></mat-progress-spinner>
-
-<br>
-<br>
-
-<!--  Icons -->
-<mat-icon>home</mat-icon>
-<mat-icon>favorite</mat-icon>
-<mat-icon>help</mat-icon>
-
-<br>
-<br>
-
-<!--  Chips -->
-<mat-chip-list>
-  <mat-chip
-    color="primary"
-    *ngFor="let category of categories"
-    (click)="selectCategory(category)"
-    [selected]="category.selected"
-    >{{ category.name }}</mat-chip>
-</mat-chip-list>
-
-<br>
-<br>
-<!--  Buttons -->
-<button mat-raised-button>Button</button>
-<button color="primary" label="primary" mat-raised-button>Primary</button>
-<button color="accent" label="accent" mat-raised-button>Accent</button>
-<button color="warn" label="warn" mat-raised-button>Warn</button>
-<button color="primary"  mat-fab> <mat-icon>check</mat-icon></button>
-
-<br>
-<br>
-
-<!--  CheckBoxes -->
-<mat-checkbox
-  #showDetails
-  [value]=""
-  [checked]="isChecked"
-  (change)="onChange($event)"
-  >Show Details</mat-checkbox>
-
-<div *ngIf="showDetails.checked">Some interesting info</div>
-
-<br>
-<br>
-
-<!--  Radio Buttons -->
-<!-- Can check with checked or by passing desired value into group tag -->
-<mat-radio-group>
-  <mat-radio-button value="1">Hopes</mat-radio-button>
-  <mat-radio-button value="2" [checked]="isChecked">Expectations</mat-radio-button>
-</mat-radio-group>
-
-<br>
-<br>
-
-<!--  Select Fields -->
-<mat-form-field>
-  <mat-select [(ngModel)]="color">
-    <mat-option
-      *ngFor="let color of colors"
-      [value]="color.id">{{ color.name }}</mat-option>
-  </mat-select>
-</mat-form-field>
-
-<br>
-<br>
-
-<!--  Input Fields -->
-<div>
-  <mat-form-field class="example-full-width">
-    <input
-      ngModel
-      #username="ngModel"
-      name="username"
-      matInput
-      placeholder="Username"
-      required
-      type="text">
-    <mat-hint>Must be unique.</mat-hint>
-    <span matSuffix>@domain.com</span>
-    <span matPrefix>admin.</span>
-    <mat-error *ngIf="username.invalid && username.errors.required">
-      Username is required.
-    </mat-error>
-  </mat-form-field>
-
-  <mat-form-field class="example-full-width">
-    <input matInput placeholder="Name">
-  </mat-form-field>
-</div>
-
-<mat-form-field class="example-full-width">
-  <textarea matInput matTextareaAutosize placeholder="Leave a comment"></textarea>
-</mat-form-field>
-
-<br>
-<br>
-
-<!--  Date Picker -->
-<mat-form-field>
-  <input
-    (focus)="birthday.open()"
-    matInput
-    [matDatepicker]="birthday"
-    placeholder="Choose a date">
-  <mat-datepicker-toggle matSuffix [for]="birthday"></mat-datepicker-toggle>
-  <mat-datepicker #birthday touchUi="true"></mat-datepicker>
-</mat-form-field>
-
-<p>Is valid moment object: {{isValidMoment}}</p>

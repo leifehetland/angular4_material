@@ -1,0 +1,29 @@
+// Imports
+// @import "another.scss";
+
+// Variables and Mixins
+@mixin soft-border($border-radius) {
+  border: 1px solid #ccc;
+  border-radius: $border-radius;
+  padding: 10px;
+}
+
+$color: #607d8b;
+
+h1 {
+  color: $color;
+  text-align: center;
+}
+
+h2 {
+  color: $color;
+  text-align: center;
+}
+
+.box {
+  @include soft-border(5px);
+}
+
+.modern-box {
+  @include soft-border(10px);
+}

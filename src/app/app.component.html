@@ -56,3 +56,18 @@
 <mat-form-field class="example-full-width">
   <textarea matInput matTextareaAutosize placeholder="Leave a comment"></textarea>
 </mat-form-field>
+
+<br>
+<br>
+
+<mat-form-field>
+  <input
+    (focus)="birthday.open()"
+    matInput
+    [matDatepicker]="birthday"
+    placeholder="Choose a date">
+  <mat-datepicker-toggle matSuffix [for]="birthday"></mat-datepicker-toggle>
+  <mat-datepicker #birthday touchUi="true"></mat-datepicker>
+</mat-form-field>
+
+<p>Is valid moment object: {{isValidMoment}}</p>

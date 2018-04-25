@@ -7,9 +7,11 @@ import {
   MatCheckboxModule,
   MatRadioModule,
   MatSelectModule,
-  MatInputModule
+  MatInputModule,
+  MatDatepickerModule,
+  MatFormFieldModule
 } from '@angular/material';
-
+import { MatMomentDateModule } from '@angular/material-moment-adapter';
 
 
 import { AppComponent } from './app.component';
@@ -26,7 +28,10 @@ import { AppComponent } from './app.component';
     MatCheckboxModule,
     MatRadioModule,
     MatSelectModule,
-    MatInputModule
+    MatInputModule,
+    MatDatepickerModule,
+    MatMomentDateModule,
+    MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent]

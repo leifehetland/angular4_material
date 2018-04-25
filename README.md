@@ -2,6 +2,9 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.5.
 
+## To get Moment to play nice with the DatePicker, shout out to this person:
+https://stackblitz.com/edit/angular-material-moment-adapter-example?file=app%2Fapp.component.html
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.

@@ -9,8 +9,9 @@ import {
   MatSelectModule,
   MatInputModule,
   MatDatepickerModule,
-  MatFormFieldModule
+  MatFormFieldModule,
 } from '@angular/material';
+import { MatIconModule } from '@angular/material/icon';
 import { MatMomentDateModule } from '@angular/material-moment-adapter';
 
 
@@ -31,7 +32,8 @@ import { AppComponent } from './app.component';
     MatInputModule,
     MatDatepickerModule,
     MatMomentDateModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

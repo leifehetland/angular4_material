@@ -3,24 +3,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import {
-  MatCheckboxModule,
-  MatRadioModule,
-  MatSelectModule,
-  MatInputModule,
-  MatDatepickerModule,
-  MatFormFieldModule,
-  MatButtonModule,
-  MatChipsModule,
-  MatProgressSpinnerModule,
-  MatTooltipModule,
-  MatTabsModule,
-  MatDialogModule
-} from '@angular/material';
+import { MatComponentsModule } from './mat-components.module'
 import { MatIconModule } from '@angular/material/icon';
 import { MatMomentDateModule } from '@angular/material-moment-adapter';
-
-
 import { AppComponent } from './app.component';
 import { EditInfoComponent } from './edit-info/edit-info.component';
 
@@ -37,20 +22,10 @@ import { EditInfoComponent } from './edit-info/edit-info.component';
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
-    MatCheckboxModule,
-    MatRadioModule,
-    MatSelectModule,
-    MatInputModule,
-    MatDatepickerModule,
-    MatMomentDateModule,
-    MatFormFieldModule,
+    MatComponentsModule,
     MatIconModule,
-    MatButtonModule,
-    MatChipsModule,
-    MatProgressSpinnerModule,
-    MatTooltipModule,
-    MatTabsModule,
-    MatDialogModule
+    MatMomentDateModule
+
   ],
   providers: [
     // { provide: DIALOG_DATA, useValue: {} }

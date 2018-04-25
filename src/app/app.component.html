@@ -1,3 +1,4 @@
+<!--  Icons -->
 <mat-icon>home</mat-icon>
 <mat-icon>favorite</mat-icon>
 <mat-icon>help</mat-icon>
@@ -5,6 +6,17 @@
 <br>
 <br>
 
+<!--  Buttons -->
+<button mat-raised-button>Button</button>
+<button color="primary" label="primary" mat-raised-button>Primary</button>
+<button color="accent" label="accent" mat-raised-button>Accent</button>
+<button color="warn" label="warn" mat-raised-button>Warn</button>
+<button color="primary"  mat-fab> <mat-icon>check</mat-icon></button>
+
+<br>
+<br>
+
+<!--  CheckBoxes -->
 <mat-checkbox
   #showDetails
   [value]=""
@@ -17,6 +29,7 @@
 <br>
 <br>
 
+<!--  Radio Buttons -->
 <!-- Can check with checked or by passing desired value into group tag -->
 <mat-radio-group>
   <mat-radio-button value="1">Hopes</mat-radio-button>
@@ -26,6 +39,7 @@
 <br>
 <br>
 
+<!--  Select Fields -->
 <mat-form-field>
   <mat-select [(ngModel)]="color">
     <mat-option
@@ -37,6 +51,7 @@
 <br>
 <br>
 
+<!--  Input Fields -->
 <div>
   <mat-form-field class="example-full-width">
     <input
@@ -67,6 +82,7 @@
 <br>
 <br>
 
+<!--  Date Picker -->
 <mat-form-field>
   <input
     (focus)="birthday.open()"

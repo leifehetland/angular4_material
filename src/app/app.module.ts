@@ -6,7 +6,8 @@ import { FormsModule } from '@angular/forms';
 import {
   MatCheckboxModule,
   MatRadioModule,
-  MatSelectModule
+  MatSelectModule,
+  MatInputModule
 } from '@angular/material';
 
 
@@ -24,7 +25,8 @@ import { AppComponent } from './app.component';
     FormsModule,
     MatCheckboxModule,
     MatRadioModule,
-    MatSelectModule
+    MatSelectModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

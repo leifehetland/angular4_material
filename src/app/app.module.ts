@@ -13,18 +13,25 @@ import {
   MatButtonModule,
   MatChipsModule,
   MatProgressSpinnerModule,
-  MatTooltipModule
+  MatTooltipModule,
+  MatTabsModule,
+  MatDialogModule
 } from '@angular/material';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMomentDateModule } from '@angular/material-moment-adapter';
 
 
 import { AppComponent } from './app.component';
+import { EditInfoComponent } from './edit-info/edit-info.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    EditInfoComponent
+  ],
+  entryComponents: [
+    EditInfoComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +48,9 @@ import { AppComponent } from './app.component';
     MatButtonModule,
     MatChipsModule,
     MatProgressSpinnerModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatTabsModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -2,6 +2,8 @@ import { Component, ViewChild, AfterViewInit } from '@angular/core';
 import { MatDatepicker } from '@angular/material';
 import { Moment } from 'moment';
 import * as moment from 'moment';
+import { MatDialog } from '@angular/material';
+import { EditInfoComponent } from './edit-info/edit-info.component';
 
 @Component({
   selector: 'app-root',
@@ -26,7 +28,7 @@ export class AppComponent {
   progress = 0;
   timer;
 
-  constructor() {
+  constructor(private dialog: MatDialog) {
     this.timer = setInterval(() => {
       this.progress++;
       if (this.progress == 100) {
@@ -58,4 +60,11 @@ export class AppComponent {
     console.log("Event Fired",$event);
   }
 
+  openDialog() {
+    this.dialog.open(EditInfoComponent)
+      .afterClosed()
+      .subscribe(result => {
+        console.log(result);
+      });
+  }
 }
